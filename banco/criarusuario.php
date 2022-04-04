@@ -1,4 +1,5 @@
 <?php
+
  require "./conect.php";
  $nome = $_REQUEST['nome'];
  $senha = $_REQUEST['senha'];

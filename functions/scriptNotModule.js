@@ -12,7 +12,7 @@ form.style.justifyContent = "center"
 form.style.alignItems = "center"
 form.style.height = "500px"
 form.style.width = "500px"
-form.style.position = "absolute"
+form.style.position = "fixed"
 form.style.top = "0"
 form.classList = "bg-light form-control"
 
@@ -20,7 +20,7 @@ var buttonEditar = document.createElement("button")
 buttonEditar.innerText = "Editar" 
 buttonEditar.addEventListener('click',function(){
     $.ajax({
-        url:"./api/editarUsuario.php",
+        url:"./banco/editarUsuario.php",
         method: "POST",
         data:{nome:$('#dataNome').val(),email:$('#dataEmail').val(),id:$('#dataId').val()}
     }).done(function( msg ) {
@@ -61,3 +61,7 @@ document.body.appendChild(container);
 
  }
  
+//refrersh
+function refresh(){
+    window.location.href = "http://localhost/crud-JS-PHP/";
+}

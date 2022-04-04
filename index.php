@@ -1,5 +1,5 @@
 <?php
-require "./api/conect.php";
+require "./banco/conect.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,15 +28,27 @@ require "./api/conect.php";
     <button  class="form-control" id="confirmar">confirmar</button> <button  class="form-control" id="cancelar">cancelar</button>
     </div>
 </div>
-<button id="adicionar">adicionar +</button>
 <table class=" table">
+
+<thead align="rigth">
+<th >
+    <button id="refresh" onclick="refresh()"> 🔄 </button>
+</th>
+<th >
+    <button id="adicionar">adicionar +</button>
+</th>
+<th colspan="3">
+    <input  id="search" value="" />
+</th>
+</thead>
+
 <thead class="table-light">
-    <th colspan="4">
+<th colspan="5">
 <p class="h4">Listagem de Usuarios</p>
 </th>
 </thead>
-<thead>
 
+<thead>
 <th>ID</th>
 <th>Nome</th>
 <th>Email</th>
