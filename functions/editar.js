@@ -37,9 +37,17 @@ buttonCancelar.addEventListener('click',function(){
     container.remove()
 })
 
-
 function editar(event){
-    let data = JSON.parse(event.target.value)
+    console.log(event)
+    $.ajax({
+        url:"./banco/pesquisa.php",
+        method:"POST",
+        data:{id:event}
+    }).done(function(msg){
+        console.log(msg)
+    })
+    let data = JSON.parse(event)
+    
     form.innerHTML = ""
     form.innerHTML = `
     <label>Id:

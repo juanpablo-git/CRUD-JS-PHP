@@ -1,6 +1,7 @@
 import Alert from "./components/alert.js"
-import {validationCadastro} from "./validations/index.js" 
-import CardSearch from "./components/card.js"
+import {validationCadastro} from "./validations/criarUsuario.js" 
+import CardSearch from "./components/cardSearch.js"
+
 
 
 document.getElementById('adicionar').addEventListener('click', function () {
@@ -25,7 +26,6 @@ document.getElementById('cancelar').addEventListener('click', function () {
 })
 
 document.getElementById('confirmar').addEventListener('click', function () {
-
     let nome = $('#nome').val()
     let senha = $('#senha').val()
     let email = $('#email').val()
@@ -43,13 +43,6 @@ document.getElementById('confirmar').addEventListener('click', function () {
          document.getElementById("cadastro").style.display = "none";
         })
     }
-
-
-})
-
-document.getElementById('editar').addEventListener('click',function(event){
-    console.log(event)
-    
 })
 
 $("#search").change(function(event){
@@ -57,9 +50,10 @@ $("#search").change(function(event){
     $.ajax({
         url:"./banco/pesquisa.php",
         method:"POST",
-        data:{nome:event.target.value}
+        data:{nome:event.target.value,id:event.target.value}
     }).done(function(msg){
        console.log("esta fazendo req",msg)
+       $("#cardSearch").remove()
         CardSearch(msg)
     }).fail(function(msg) {
         alert( "error" +msg);
