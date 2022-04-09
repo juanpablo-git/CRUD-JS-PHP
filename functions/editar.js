@@ -38,15 +38,15 @@ buttonCancelar.addEventListener('click',function(){
 })
 
 function editar(event){
-    console.log(event)
     $.ajax({
         url:"./banco/pesquisa.php",
         method:"POST",
-        data:{id:event}
+        data:{id:event,nome:null}
     }).done(function(msg){
-        console.log(msg)
-    })
-    let data = JSON.parse(event)
+        var data = JSON.parse(msg)[0]
+        console.log("Requisiçao",data)
+
+    
     
     form.innerHTML = ""
     form.innerHTML = `
@@ -66,6 +66,8 @@ container.appendChild(form)
 form.appendChild( buttonEditar)
 form.appendChild(buttonCancelar)
 document.body.appendChild(container);
+
+})
 
  }
  

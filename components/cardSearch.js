@@ -1,6 +1,7 @@
 import Tabela from "./tabela.js"
 export default function Card(msg){
     const data = JSON.parse(msg)
+    console.log(msg)
     const cardContainer = document.createElement("div")
     cardContainer.style.display = "flex"
     cardContainer.style.justifyContent = "center"

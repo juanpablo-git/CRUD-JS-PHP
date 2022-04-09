@@ -2,13 +2,14 @@
 require "./banco/conect.php";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        
+    <script src="./script.js" type="module"></script>
     <script src="./functions/editar.js" ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Listagem</title>
@@ -38,7 +39,7 @@ require "./banco/conect.php";
     <button id="adicionar">adicionar +</button>
 </th>
 <th colspan="3">
-    <input  id="search" value="" />
+    <input  id="search" value="" placeholder="pesquisar"/>
 </th>
 </thead>
 
@@ -68,9 +69,6 @@ require "./banco/conect.php";
 <?php } ?>
 </tbody>
 </table>
-<script src="./script.js" type="module">
-
-</script>
 
 </body>
 </html>
